@@ -1,4 +1,3 @@
-```java
 package com.guessword;
 
 import java.sql.Connection;
@@ -95,4 +94,3 @@ public class DatabaseSetup {
         }
     }
 }
-```
