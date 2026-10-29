@@ -27,7 +27,7 @@ public class WordEvaluator {
         Result[] result = new Result[5];
         int[] remaining = new int[26];
 
-        // First pass: identify exact-position matches.
+        // exact position
         for (int i = 0; i < 5; i++) {
             if (guess.charAt(i) == secret.charAt(i)) {
                 result[i] = Result.CORRECT;
@@ -36,7 +36,7 @@ public class WordEvaluator {
             }
         }
 
-        // Second pass: identify letters in the wrong position.
+        // wrong position
         for (int i = 0; i < 5; i++) {
             if (result[i] == Result.CORRECT) {
                 continue;
