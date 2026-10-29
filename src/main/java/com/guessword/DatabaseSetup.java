@@ -64,7 +64,7 @@ public class DatabaseSetup {
                 )
                 """);
 
-            // Insert words without duplicating existing entries.
+            // Insert words
             try (PreparedStatement ps = con.prepareStatement("""
                     MERGE INTO words (word)
                     KEY (word)
@@ -77,7 +77,7 @@ public class DatabaseSetup {
                 ps.executeBatch();
             }
 
-            // Create the default admin only if it does not exist.
+            // Create default admin if not exist.
             try (PreparedStatement ps = con.prepareStatement("""
                     INSERT INTO users (username, password_hash, role)
                     SELECT ?, ?, 'ADMIN'
